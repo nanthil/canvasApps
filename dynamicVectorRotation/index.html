@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script src="./justVectorThings.js"></script>
+    <script src="./justDrawThings.js"></script>
+    <script src="./justGraphThings.js"></script>
+    <script src="./justTestThings.js"></script>
+    <script src="./justMain.js"></script>
+    <script>
+      //i need a functional lesson...
+      //if you look at justDraw/justGraph-things'.js, they appear to be stacks of commands
+      //is there a way to create functional graphical apis?
+      //do functional graphical apis already exist? How does it work?
+      //how would one work if it doesn't exist already?
+      //in my mind I would think that the thing that I'm drawing would exist in data somewhere, and that would be the return value from drawing something.
+      //in the main loop, you would recurse, events would fire, and values would be returned from events, passing changed values for the draw method to render
+      //is this something that can be done?
+      //for example: (pseudocode)
+      //
+      //let blocks = [b1,b2,b3]
+      //draw(blocks):
+      //  --do something with the graphics
+      //  --such as a 3d rotate
+      //  let newState = blocks.map(b=>rotate(b));
+      //
+      //  if(event): newState.push(newBlock)
+      //  if(notEOF): draw(newState);
+      //  else
+      //Can someone splain me plz?
+
+
+      window.onload = main;
+    </script>
+  </head>
+  <body>
+    <h1>Just Math Things</h1>
+    <canvas id="canvas" width="480" height="300"></canvas>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+</html>
