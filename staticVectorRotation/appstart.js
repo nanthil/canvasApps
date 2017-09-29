@@ -1,13 +1,12 @@
 (appstart = 
     ({mathOps, arrayMethods, object, vectorlib, graph, draw, origin,y, canvas, context}) => (
-        {using, functions,youCan} = y,
-        { pfhorEach,redeuce,mapfh} = arrayMethods,
-        { values } = object,
-        { range, isDivisibleBy } = mathOps,
         { Vector2, Vector2Add, Vector2Sub,rotate } = vectorlib.twoD(),
-        console.log(vectorlib.twoD()),
-        {axes,hashes} = graph,
+        { pfhorEach,redeuce,mapfh} = arrayMethods,
+        { range, isDivisibleBy } = mathOps,
+        {using, functions,youCan} = y,
         {drawLine, drawPoint} = draw,
+        {axes,hashes} = graph,
+        { values } = object,
 
 
         points = 
