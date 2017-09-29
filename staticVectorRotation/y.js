@@ -34,22 +34,32 @@
         youCan, doFactorial, just/*.*/, using/*.*/, functions//.
     })
 );
-(testTheYCombinator =
-    (
-        testArr,
-        { youCan, doFactorial, just, using, functions } = why(),
+///for simple usage of the y combinator, 
+/// import functions and using
+/// pass functions a function of the type fn -> fn -> a -> fn(a)
+///pass using functions twice
 
-        facts = testArr.map(stopit => ({
-            [stopit]: just(stopit)
-        })),
+///for example:
+///loop = fn => args => fn(args)
+///loopy = functions(loop)
+///using(loopy)(loopy)
 
-        factsRound2/*fight!!!*/ = testArr.map(okYouMadeYourPoint => ({
-            [okYouMadeYourPoint + ': result ']:
-            using(functions())(youCan(doFactorial))(okYouMadeYourPoint)
-        }))    
+// (testTheYCombinator =
+//     (
+//         testArr,
+//         { youCan, doFactorial, just, using, functions } = why(),
 
-    ) => ({
-        facts, factsRound2
-    })
-)
-console.log(testTheYCombinator([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+//         facts = testArr.map(stopit => ({
+//             [stopit]: just(stopit)
+//         })),
+
+//         factsRound2/*fight!!!*/ = testArr.map(okYouMadeYourPoint => ({
+//             [okYouMadeYourPoint + ': result ']:
+//             using(functions())(youCan(doFactorial))(okYouMadeYourPoint)
+//         }))    
+
+//     ) => ({
+//         facts, factsRound2
+//     })
+// )
+// console.log(testTheYCombinator([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
