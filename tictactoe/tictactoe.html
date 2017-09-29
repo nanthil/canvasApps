@@ -1,16 +1,22 @@
 <html>
     <head>
+        <script src="./tile.js"></script>
         <script src="./main.js"></script>
         <script>
+            //create a game state object
+            let whosTurn = []
             window.onload = () => {
-                const canvas = getCanvas()
-                const context = canvas.getContext('2d')
+                const getCanvas = () => document.getElementById('canvas')
+                const canvas    = getCanvas()
+                const context   = canvas.getContext('2d')
                 const width = canvas.width, height = canvas.height
+
                 const forDrawing = {width, height, thirdx: third(width), sixthx: sixth(width), thirdy: third(height), sixthy: sixth(height),context}
 
-                canvas.addEventListener('mousemove', mouseMove(canvas,context, forDrawing))
-                canvas.addEventListener('click', mouseClick(canvas,context, forDrawing))
-                main(canvas, context, forDrawing)
+                let tiles = startNewGame(canvas, context, forDrawing)
+
+                canvas.addEventListener('mousemove', mouseMove(canvas,context, tiles,forDrawing))
+                canvas.addEventListener('click', mouseClick(canvas,context, tiles,forDrawing))
             }
         </script>
 
