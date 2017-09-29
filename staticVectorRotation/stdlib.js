@@ -89,7 +89,7 @@
 
         mapfh = a => fn => pfhor(
             cond   = depfhcond(a),
-            action = (a => (i, r = []) => r.concat(fn(a[i], i, a)))(a),
+            action = (a => (i, r = [], result = r?r.push(fn(a[i], i, a)):[fn(a[i], i, a)]) => r)(a),
             it     = defit
         )(0),
         

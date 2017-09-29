@@ -1,10 +1,10 @@
 (draw = ({context}) => (
 
-    drawLine = ([[fx,fy], [tx,ty]]) => (
+    drawLine = ([[fx,fy], [tx,ty]], color) => (
         context.beginPath(),
         context.moveTo(fx,fy),
         context.lineTo(tx,ty),
-        // context.strokeStyle = (color !== undefined) ? color: "black",
+        context.strokeStyle = (color !== undefined) ? color: "black",
         context.lineWidth = 3,
         context.stroke(),
         context.closePath()

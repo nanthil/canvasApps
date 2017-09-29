@@ -35,10 +35,13 @@
                     Vector2Mul     = TwoReturnVector2(mul),
                     Vector2Div     = TwoReturnVector2(div),
                     Vector2DistSqr = (v1,v2) => Vector2LenSqr(Vector2Sub(v1,v2)),
-                    Vector2Dist    = (v1,v2) => Math.sqrt (Vector2DistSqr(v1,v2))
-             
-
-
+                    Vector2Dist    = (v1,v2) => Math.sqrt (Vector2DistSqr(v1,v2)),
+            
+            rotate = (
+                [x,y],
+                nx = x*Math.cos(.01) - y*Math.sin(.01),
+                ny = x*Math.sin(.01) + y*Math.cos(.01)
+            ) => Vector2(nx,ny)
         ) => ({
             Vector2, Vector2Zero, 
 
@@ -46,7 +49,8 @@
             Vector2Negate,Vector2Scale,Vector2LenSqr, Vector2Length, Vector2Normalize, 
 
             TwoVector2Transform, TwoReturnVector2,
-            Vector2Add,Vector2Sub,Vector2Mul,Vector2Div, Vector2Dist,Vector2DistSqr
+            Vector2Add,Vector2Sub,Vector2Mul,Vector2Div, Vector2Dist,Vector2DistSqr,
+            rotate
 
         }),
         threeD = (
@@ -59,29 +63,3 @@
         threeD
     })
 );
-
-(oof =
-    (
-        declare = 'private variables',
-        and = (otherFunctions) => (
-            thatDoSomething ='.'
-        ),
-        notice = (
-            how = (
-                there = () => 'is',
-                no = 'syntax'
-            ) => (
-                but = 'there is only array functions and IIFes'
-            )
-        )
-
-    ) => ({
-        //everything is nicely scoped
-        //this of this return object as the export from oof
-        notice,
-        declare
-        //there, no, and but are not available here
-        //uncomment this line to see an error because of the scoping
-        //there,no,but 
-    })
-)()
