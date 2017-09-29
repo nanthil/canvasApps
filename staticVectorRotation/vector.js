@@ -1,13 +1,11 @@
 (vectorlib = 
     (
-        stdlib,
+        {mathOps, arrayMethods, object},
         twoD = (
-
-            { object, mathOps } = stdlib,
             { 
                 range,mul,sum,sub,div,mod,square,both,either,lt,gt,eq,neq,lte,gte,lbs,rbs,bor,xor,band,curMod,curMul,curEq,odd,even,negate,equalsZero,isDivisible,min,max,compose 
-            } = mathOps(),
-            { freeze } = object(),
+            } = mathOps,
+            { freeze } = object,
 
             Color4  = (x,y,z,a) => freeze([x,y,z,a]),
             Vector2 = (x,y) => freeze([x,y]),

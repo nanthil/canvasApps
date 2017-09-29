@@ -3,10 +3,20 @@
         <script src="./stdlib.js"></script>
         <script src="./y.js"></script>
         <script src="./vector.js"></script>
+        <script src="./graph.js"></script>
+        <script src="./draw.js"></script>
         <script src="./appstart.js"></script>
         <script src="./main.js"></script>
     </head>
     <body>
+        <script>
+            window.onload = () => (
+                std = stdlib(),
+                canvas = document.getElementById('canvas'),
+                main(std, canvas)
+            )
+        </script>
+        <canvas id="canvas"></canvas>
         Test Page
 
     </body>
