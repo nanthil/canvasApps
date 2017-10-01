@@ -22,12 +22,10 @@ const centerOfShape = shape => {
     return [xs,ys]
 }
 const shape = sides => (size,origin,[ox,oy]=origin) => {
-    const space = 360/sides* (180 / Math.PI)
-    console.log(space)
+    const space = 360/sides* (Math.PI/180)
     const genSides = [...Array(sides).keys()]
     let start = [ox,oy + size]
     for(let i = 0; i < genSides.length; i++){
-        console.log(i)
         if(i===0) genSides[0] = start
         else genSides[i] = rotate(origin, genSides[i-1], space)
     }

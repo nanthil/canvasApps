@@ -10,9 +10,10 @@ const main = () => {
         center = centerOfShape(instance.shape)
         instance.update()
         instance.frame++
-        if(instance.frame === 100) {
+        if(instance.frame === 50) {
             instance.frame = 0
             instance.sides++
+            console.log(instance.sides)
             instance.shape= shape(instance.sides)(100, center)
         }
 
