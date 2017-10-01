@@ -7,9 +7,11 @@ class state{
         this.width   = this.canvas.width
         this.height  = this.canvas.height
         this.origin  = Object.freeze([this.width/2, this.height/2])
-        this.triangles = triangle(100, this.origin)
+        this.frame = 0
+        this.sides = 3
+        this.shape = shape(this.sides)(100, this.origin)
         this.canvas.addEventListener('keydown',(e) => 
-            this.triangles = this.input.handle(e.keyCode,this)
+            this.shape = this.input.handle(e.keyCode,this)
         )
     }
     curryDraw(fn){

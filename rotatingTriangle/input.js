@@ -11,8 +11,8 @@ class inputs {
     }
     handle(input,instance) {
         return input >36 && input < 41
-        ?instance.triangles.map(this.keys[input.toString()])
-        :instance.triangles
+        ?instance.shape.map(this.keys[input.toString()])
+        :instance.shape
     }
 }
 calc= (val, arr) => arr.reduce((a,b) => a + b) + val

@@ -1,6 +1,7 @@
 (draw = ({context}) => (
 
-    drawLine = ([[fx,fy], [tx,ty]], color) => (
+    drawLine = ([[fx,fy], [tx,ty]], color,isnew,isfinished,fill) => (
+
         context.beginPath(),
         context.moveTo(fx,fy),
         context.lineTo(tx,ty),
