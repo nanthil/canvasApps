@@ -11,11 +11,13 @@
             window.onload = () => (
                 canvas = document.getElementById('canvas'),
                 canvas2 = document.getElementById('canvas2'),
-                state = new State(canvas, canvas2),
+                canvas3 = document.getElementById('canvas3'),
+                state = new State(canvas, canvas2, canvas3),
                 main(state, canvas2)
             )
         </script>
         <canvas id="canvas" tabindex="0"></canvas>
         <canvas id="canvas2"tabindex="0"></canvas>
+        <canvas id="canvas3"tabindex="0"></canvas>
     </body>
 </html>

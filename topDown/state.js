@@ -2,7 +2,7 @@ let inputEvents = []
 let worldEvents = []
 
 function State(canvas) {
-    this.registerEventHandlers(canvas, canvas2)
+    this.registerEventHandlers(canvas, canvas2, canvas3)
 
     //world centric camera
     this.canvas   = canvas
@@ -11,6 +11,9 @@ function State(canvas) {
     //player centric camera
     this.canvas2  = canvas2
     this.context2 = canvas2.getContext('2d')
+
+    this.canvas3  = canvas3
+    this.context3 = canvas3.getContext('2d')
 
     //player 1 moves in the world, player 2's world revolves around him
     this.player   = [this.canvas.width/2,this.canvas.height/2,180] //player: [x,y], angle
@@ -32,12 +35,15 @@ State.prototype.draw = function(world, player, p2) {
 
     drawWorld2(world, this.context2, player, p2)
     drawPlayer(p2, this.context2)
+
+    drawWorld3(world, this.context3, player,p2)
 }
 
 State.prototype.loop = function(state) {
     return () => {
         state.context.clearRect(0,0,state.canvas.width, state.canvas.height)
         state.context2.clearRect(0,0,state.canvas.width, state.canvas.height)
+        state.context3.clearRect(0,0,state.canvas.width, state.canvas.height)
         state.movePlayer(state)
         state.draw(state.world, state.player, state.player2)
         requestAnimationFrame(state.loop(state))
